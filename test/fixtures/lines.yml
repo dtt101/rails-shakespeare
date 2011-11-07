@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  character: MyString
+  line: MyText
+  line_order: 1
+  scene_id: 1
+
+two:
+  character: MyString
+  line: MyText
+  line_order: 1
+  scene_id: 1

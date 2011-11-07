@@ -1,0 +1,29 @@
+<h1>Listing performances</h1>
+
+<table>
+  <tr>
+    <th>Line</th>
+    <th>Video url</th>
+    <th>Email address</th>
+    <th>Twitter name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @performances.each do |performance| %>
+  <tr>
+    <td><%= performance.line_id %></td>
+    <td><%= performance.video_url %></td>
+    <td><%= performance.email_address %></td>
+    <td><%= performance.twitter_name %></td>
+    <td><%= link_to 'Show', performance %></td>
+    <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
+    <td><%= link_to 'Destroy', performance, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Performance', new_performance_path %>

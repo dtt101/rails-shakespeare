@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Line:</b>
+  <%= @performance.line_id %>
+</p>
+
+<p>
+  <b>Video url:</b>
+  <%= @performance.video_url %>
+</p>
+
+<p>
+  <b>Email address:</b>
+  <%= @performance.email_address %>
+</p>
+
+<p>
+  <b>Twitter name:</b>
+  <%= @performance.twitter_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_performance_path(@performance) %> |
+<%= link_to 'Back', performances_path %>

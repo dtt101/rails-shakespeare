@@ -1,4 +1,10 @@
 Shakespeare::Application.routes.draw do
+  resources :performances
+
+  resources :lines
+
+  resources :scenes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
