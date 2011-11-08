@@ -1,4 +1,6 @@
 Shakespeare::Application.routes.draw do
+  get "drama/index"
+
   resources :performances
 
   resources :lines
