@@ -1,4 +1,7 @@
 class ScenesController < ApplicationController
+  
+  layout "admin"
+  
   # GET /scenes
   # GET /scenes.json
   def index
