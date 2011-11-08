@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# load in default scene and lines
+Scene.create(title: 'Henry IV, Part One', description: 'SCENE IV. The Boar\'s-Head Tavern, Eastcheap.')
