@@ -1,4 +1,7 @@
 class PerformancesController < ApplicationController
+
+  layout "admin"
+  
   # GET /performances
   # GET /performances.json
   def index

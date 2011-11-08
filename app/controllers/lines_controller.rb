@@ -1,4 +1,7 @@
 class LinesController < ApplicationController
+
+  layout "admin"
+
   # GET /lines
   # GET /lines.json
   def index
