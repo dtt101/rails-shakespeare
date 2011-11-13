@@ -2,9 +2,13 @@
 	<h1><%= image_tag "title.png" %></h1>
 	<h2><%= @scene.description %></h2>
 </hgroup>
+
 <% @lines.each do |line| %>
-<dl>
-	<dt><%= line.character %></dt>
-	<dd><%= simple_format(line.line) %></dd>
-</dl>
+<div class="line">
+	<% if line.character? %>
+	<b><%= line.character %></b> <%= simple_format(line.line) %>
+	<% else %>
+	<i><%=  simple_format(line.line) %></i>
+	<% end %>
+</div>
 <% end %>
