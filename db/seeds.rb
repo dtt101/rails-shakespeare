@@ -10,5 +10,12 @@
 scene = Scene.create(title: 'Henry IV, Part One', description: 'SCENE IV. The Boar\'s-Head Tavern, Eastcheap.')
 
 # load in lines
-# TODO
+scene_id = scene.id
+lines = [
+  {character: '', line: "Enter PRINCE HENRY and POINS", line_order: 5, scene_id: scene_id}, 
+  {character: 'PRINCE HENRY', line: "Ned, prithee, come out of that fat room, and lend me\nthy hand to laugh a little.", line_order: 10, scene_id: scene_id}, 
+  {character: 'POINS', line: "Where hast been, Hal?", line_order: 15, scene_id: scene_id},   
+
+]
+Line.create(lines)
 

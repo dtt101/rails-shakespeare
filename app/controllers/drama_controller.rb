@@ -9,7 +9,8 @@ class DramaController < ApplicationController
   # TODO - auth on scene, line and performance admin
   
   def index
-    
+    @scene = Scene.find(1)
+    @lines = @scene.lines # TODO - order by line order
   end
 
 end

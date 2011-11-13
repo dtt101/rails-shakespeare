@@ -1,24 +1,15 @@
-<div id="scene-info" style="background-color:#fec11b; color:#fff">
-	<H3>SCENE IV. The Boar's-Head Tavern, Eastcheap.</h3>
-</div>
-<div>
-	<p><blockquote>
-	<i>Enter PRINCE HENRY and POINS</i>
-	</blockquote>
-</div>
-<div>
-	<b>PRINCE HENRY</b>
-	<blockquote>
-	Ned, prithee, come out of that fat room, and lend me<br>
-	thy hand to laugh a little.<br>
-	</blockquote>
-</div>
-<div class="alt">
-	<b>POINS</b>
-	<blockquote>
-	Where hast been, Hal?<br>
-	</blockquote>
-</div>
+<hgroup>
+	<h1><%= image_tag "title.png" %></h1>
+	<h2><%= @scene.description %></h2>
+</hgroup>
+<%= @lines.count %>
+<% @lines.each do |line| %>
+<dl>
+	<dt><%= line.character %></dt>
+	<dd><%= simple_format(line.line) %></dd>
+</dl>
+<% end %>
+
 <div>
 <b>PRINCE HENRY</b>
 <blockquote>

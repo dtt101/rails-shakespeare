@@ -11,7 +11,14 @@ body {
 #container {
 	width:800px;
 	margin:auto;
+	margin-top:30px;
 }
 #main {
 	text-align:left;
+}
+h1, h2, h3 {
+	font-family: 'Josefin Slab', serif;
+}
+hgroup {
+	text-align:center;
 }
