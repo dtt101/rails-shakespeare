@@ -2,7 +2,6 @@
 	<h1><%= image_tag "title.png" %></h1>
 	<h2><%= @scene.description %></h2>
 </hgroup>
-<%= @lines.count %>
 <% @lines.each do |line| %>
 <dl>
 	<dt><%= line.character %></dt>
