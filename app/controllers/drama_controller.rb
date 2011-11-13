@@ -11,6 +11,7 @@ class DramaController < ApplicationController
   def index
     @scene = Scene.find(1)
     @lines = @scene.lines # TODO - order by line order
+    @performance = Performance.new
   end
 
 end
