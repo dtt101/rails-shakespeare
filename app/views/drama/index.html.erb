@@ -3,6 +3,8 @@
 	<h2><%= @scene.description %></h2>
 </hgroup>
 
+<%= flash[:notice] %>
+
 <% @lines.each do |line| %>
 	<div class="line">
 		<% if line.character? %>

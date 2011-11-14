@@ -14,12 +14,15 @@ class DramaController < ApplicationController
     @performance = Performance.new(params[:performance]) 
     if @performance.save
       logger.info('performace saved')
-      #redirect_to(action: 'show', id: @picture.id) 
+      flash[:notice] = "Your performance has been saved"
+      redirect_to :action => 'index'
+      #format.json { render json: @performance, status: :created, location: @performance }
     else
       logger.info('not saved')
-      #render(action: :get)
+      flash[:notice] = "Performance not created"
+      redirect_to :action => 'index'
+      #format.json { render json: @performance.errors, status: :unprocessable_entity }
     end
-    redirect_to(action: 'index')
   end
 
 end
