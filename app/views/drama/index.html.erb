@@ -4,21 +4,23 @@
 </hgroup>
 
 <% @lines.each do |line| %>
-<div class="line">
-	<% if line.character? %>
-	<b><%= line.character %></b> <%= simple_format(line.line) %>
-	<%= form_for @performance do |f| %>
-	  <%= f.label :video_url %>:
-	  <%= f.text_field :video_url %><br />
-	  <%= f.label :email_address %>:
-	  <%= f.text_field :email_address %><br />
-	  <%= f.label :twitter_name %>:
-	  <%= f.text_field :twitter_name %><br />
-		<%= hidden_field_tag(:line_id, line.id) %>
-	  <%= f.submit %>
-	<% end %>
-	<% else %>
-	<i><%=  simple_format(line.line) %></i>
-	<% end %>
-</div>
+	<div class="line">
+		<% if line.character? %>
+			<b><%= line.character %></b> <%= simple_format(line.line) %>
+		<% else %>
+			<i><%=  simple_format(line.line) %></i>
+		<% end %>
+		<% if line.character? %>
+			<%= form_for(@performance, :url => '/drama/new_performance') do |f| %>
+			  <%= f.label :video_url %>:
+			  <%= f.text_field :video_url %><br />
+			  <%= f.label :email_address %>:
+			  <%= f.email_field :email_address %><br />
+			  <%= f.label :twitter_name %>:
+			  <%= f.text_field :twitter_name %><br />
+				<%= hidden_field_tag(:line_id, line.id) %>
+			  <%= f.submit %>
+			<% end %>
+		<% end %>
+	</div>
 <% end %>
