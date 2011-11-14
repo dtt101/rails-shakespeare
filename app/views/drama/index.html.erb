@@ -13,7 +13,7 @@
 			<i><%=  simple_format(line.line) %></i>
 		<% end %>
 		<% if line.character? %>
-			<%= form_for(@performance, :url => '/drama/new_performance') do |f| %>
+			<%= form_for(@performance, :url => '/drama/new_performance', :remote => true) do |f| %>
 			  <%= f.label :video_url %>:
 			  <%= f.text_field :video_url %><br />
 			  <%= f.label :email_address %>:
