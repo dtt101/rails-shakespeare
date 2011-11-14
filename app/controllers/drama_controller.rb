@@ -1,6 +1,7 @@
 class DramaController < ApplicationController
   
-  # TODO - Add in ability for users to submit YouTube links with email and twitter
+  respond_to :html, :js
+  
   # TODO - look at moderation for YouTube videos
   # TODO - auth on scene, line and performance admin
   
@@ -10,19 +11,20 @@ class DramaController < ApplicationController
     @performance = Performance.new
   end
   
-  def new_performance
+  def create_performance
     @performance = Performance.new(params[:performance]) 
-    if @performance.save
-      logger.info('performace saved')
-      flash[:notice] = "Your performance has been saved"
-      redirect_to :action => 'index'
-      #format.json { render json: @performance, status: :created, location: @performance }
-    else
-      logger.info('not saved')
-      flash[:notice] = "Performance not created"
-      redirect_to :action => 'index'
-      #format.json { render json: @performance.errors, status: :unprocessable_entity }
-    end
+    
+    # TODO - handle save of performance to related line
+    respond_to do |format|
+      if @performance.save
+        format.html { redirect_to :action =>'index', notice: 'success' }
+        format.js { render json: @performance, status: :created, location: @performance }
+      else
+        format.html { redirect_to :action => 'index', notice: 'failure' }
+        format.js { render json: @performance.errors, status: :unprocessable_entity }
+      end
+    end    
+    
   end
 
 end

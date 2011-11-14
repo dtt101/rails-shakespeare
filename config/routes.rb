@@ -13,7 +13,7 @@ Shakespeare::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  match 'drama/new_performance' => 'drama#new_performance'
+  match 'drama/create_performance' => 'drama#create_performance'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
