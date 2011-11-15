@@ -12,8 +12,8 @@ class DramaController < ApplicationController
   
   def create_performance
     @performance = Performance.new(params[:performance]) 
-    # TODO - make sure approved is set to false after obj created
-    line = params[:line_id])
+    # TODO - handle save of performance to related line - make sure approved is set to false after obj created
+    line = Line.find(params[:line_id])
     respond_to do |format|
       if line.performances.push(@performance)
         format.html { redirect_to :action =>'index', notice: 'success' }

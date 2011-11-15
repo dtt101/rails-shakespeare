@@ -1,11 +1,17 @@
 Shakespeare::Application.routes.draw do
+  
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
+  root :to => 'drama#index'
+
   get "drama/index"
 
   resources :performances
-
   resources :lines
-
   resources :scenes
+  resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -57,7 +63,6 @@ Shakespeare::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'drama#index'
 
   # See how all your routes lay out with "rake routes"
 

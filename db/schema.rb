@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111107210610) do
+ActiveRecord::Schema.define(:version => 20111115233304) do
 
   create_table "lines", :force => true do |t|
     t.string   "character"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20111107210610) do
   create_table "scenes", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",            :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
