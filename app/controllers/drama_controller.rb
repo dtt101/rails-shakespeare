@@ -13,10 +13,10 @@ class DramaController < ApplicationController
   
   def create_performance
     @performance = Performance.new(params[:performance]) 
-    
-    # TODO - handle save of performance to related line
+    # TODO - make sure approved is set to false after obj created
+    line = params[:line_id])
     respond_to do |format|
-      if @performance.save
+      if line.performances.push(@performance)
         format.html { redirect_to :action =>'index', notice: 'success' }
         format.js { render json: @performance, status: :created, location: @performance }
       else
