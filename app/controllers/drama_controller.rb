@@ -2,7 +2,6 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - look at moderation for YouTube videos
   # TODO - auth on scene, line and performance admin
   
   def index
