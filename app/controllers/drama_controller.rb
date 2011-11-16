@@ -2,17 +2,22 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - auth on scene, line and performance admin
+  # TODO - add user to seeds (security?), remove sign up pages and add auth to user admin
+  # TODO - create page for user to edit password
+  # TODO - show only new form on first line without performance
+  # TODO - when video submitted load in YouTube player for video
+  # TODO - show error when video submission fails
+  # TODO - add in admin 'approved' bool for videos
   
   def index
     @scene = Scene.find(1)
-    @lines = @scene.lines # TODO - order by line order
+    @lines = @scene.lines # TODO - order by line order, need to update in seeds
     @performance = Performance.new
   end
   
   def create_performance
     @performance = Performance.new(params[:performance]) 
-    # TODO - handle save of performance to related line - make sure approved is set to false after obj created
+    # TODO - make sure approved is set to false after obj created
     line = Line.find(params[:line_id])
     respond_to do |format|
       if line.performances.push(@performance)

@@ -1,5 +1,7 @@
 class LinesController < ApplicationController
 
+  before_filter :require_login
+
   layout "admin"
 
   # GET /lines
