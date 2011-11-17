@@ -2,8 +2,6 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - remove sign up pages and add auth to user admin
-  # TODO - create page for user to edit password
   # TODO - show only new form on first line without performance
   # TODO - when video submitted load in YouTube player for video
   # TODO - show error when video submission fails
