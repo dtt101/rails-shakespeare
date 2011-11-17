@@ -242,5 +242,13 @@ lines = [
   {character: '', line: "Exeunt", line_order: 5, scene_id: scene_id},
   {character: 'PETO', line: "Good morrow, good my lord.\n", line_order: 5, scene_id: scene_id},  
 ]
-Line.create(lines)
+# add line order
+line_order = 0
+lines.each do |line|
+  line[:line_order] = line_order
+  Line.create(line)
+  line_order += 1
+end
+# create test user
+User.create(:email => "test@test.com", :password => "password")
 

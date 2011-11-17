@@ -2,7 +2,7 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - add user to seeds (security?), remove sign up pages and add auth to user admin
+  # TODO - remove sign up pages and add auth to user admin
   # TODO - create page for user to edit password
   # TODO - show only new form on first line without performance
   # TODO - when video submitted load in YouTube player for video
@@ -11,7 +11,7 @@ class DramaController < ApplicationController
   
   def index
     @scene = Scene.find(1)
-    @lines = @scene.lines # TODO - order by line order, need to update in seeds
+    @lines = @scene.lines.order(:line_order)
     @performance = Performance.new
   end
   
