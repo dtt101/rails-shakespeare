@@ -12,7 +12,7 @@
 		<% else %>
 			<i><%=  simple_format(line.line) %></i>
 		<% end %>
-		<% if line.character? %>
+		<% if line.character? and (line.performances.count == 0) %>
 			<%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
 			  <%= f.label :video_url %>:
 			  <%= f.text_field :video_url %><br />
