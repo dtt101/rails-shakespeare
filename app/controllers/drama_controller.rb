@@ -2,12 +2,11 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - when video submitted validate as URL
+  # TODO - add in admin 'approved' bool for videos
   # TODO - show button to pop-up line and submit form, with copy about privacy
   # TODO - show YouTube video player when performance exists
-  # TODO - load in YouTube player for video dynamically when video submitted
   # TODO - show error when video submission fails
-  # TODO - add in admin 'approved' bool for videos
+  # TODO - implement counter_cache
   
   def index
     @scene = Scene.find(1)
