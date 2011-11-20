@@ -1,38 +1,37 @@
 <hgroup>
-	<h1><%= image_tag "title.png" %></h1>
-	<h2><%= @scene.description %></h2>
+  <h1><%= image_tag "title.png" %></h1>
+  <h2><%= @scene.description %></h2>
 </hgroup>
 
 <%= flash[:notice] %>
 
 <% @lines.each do |line| %>
-	<div class="line">
-		<% if line.character? %>
-			<b><%= line.character %></b> <%= simple_format(line.line) %>
-		<% else %>
-			<i><%=  simple_format(line.line) %></i>
-		<% end %>
-		<% if line.character? and (line.performances.count == 0) %>
-			<%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
-				<!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
-			  <%= f.label :video_url %>:
-			  <%= f.url_field :video_url %><br />
-			  <%= f.label :email_address %>:
-			  <%= f.email_field :email_address %><br />
-			  <%= f.label :twitter_name %>:
-			  <%= f.text_field :twitter_name %><br />
-				<%= hidden_field_tag(:line_id, line.id) %>
-			  <%= f.submit %>
-			<% end %>
-		<% else %>
-			<% line.performances.each do |p| %>
-				<% if p.approved %>
-					<%= p.video_url %>
-					<%= p.twitter_name %>
-				<% else %>
-					<p>We have a performance waiting to be reviewed.</p>
-				<% end %>
-			<% end %>
-		<% end %>
-	</div>
+  <div class="line">
+    <% if line.character? %>
+      <b><%= line.character %></b> <%= simple_format(line.line) %>
+    <% else %>
+      <i><%=  simple_format(line.line) %></i>
+    <% end %>
+    <% if line.character? and (line.performances.count == 0) %>
+      <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
+        <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
+        <%= f.label :video_url %>:
+        <%= f.url_field :video_url %><br />
+        <%= f.label :email_address %>:
+        <%= f.email_field :email_address %><br />
+        <%= f.label :twitter_name %>:
+        <%= f.text_field :twitter_name %><br />
+        <%= hidden_field_tag(:line_id, line.id) %>
+        <%= f.submit %>
+      <% end %>
+    <% else %>
+      <% line.performances.each do |p| %>
+        <% if p.approved %>
+          <iframe width="425" height="349" src="http://www.youtube.com/embed/<%= get_item_embed_id(p.video_url) %>" frameborder="0" allowfullscreen></iframe>
+        <% else %>
+          <p>We have a performance waiting to be reviewed.</p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>

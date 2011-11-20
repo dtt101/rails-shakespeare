@@ -2,9 +2,8 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - add in admin 'approved' bool for videos
-  # TODO - show button to pop-up line and submit form, with copy about privacy
   # TODO - show YouTube video player when performance exists
+  # TODO - show button to pop-up line and submit form, with copy about privacy
   # TODO - show error when video submission fails
   # TODO - implement counter_cache
   
