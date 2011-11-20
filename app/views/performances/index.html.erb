@@ -6,6 +6,7 @@
     <th>Video url</th>
     <th>Email address</th>
     <th>Twitter name</th>
+    <th>Approved?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +18,7 @@
     <td><%= performance.video_url %></td>
     <td><%= performance.email_address %></td>
     <td><%= performance.twitter_name %></td>
+    <td><%= performance.approved %></td>
     <td><%= link_to 'Show', performance %></td>
     <td><%= link_to 'Edit', edit_performance_path(performance) %></td>
     <td><%= link_to 'Destroy', performance, confirm: 'Are you sure?', method: :delete %></td>

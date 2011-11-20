@@ -26,8 +26,12 @@
 			<% end %>
 		<% else %>
 			<% line.performances.each do |p| %>
-				<%= p.video_url %>
-				<%= p.twitter_name %>
+				<% if p.approved %>
+					<%= p.video_url %>
+					<%= p.twitter_name %>
+				<% else %>
+					<p>We have a performance waiting to be reviewed.</p>
+				<% end %>
 			<% end %>
 		<% end %>
 	</div>

@@ -16,7 +16,8 @@ class DramaController < ApplicationController
   
   def create_performance
     @performance = Performance.new(params[:performance]) 
-    # TODO - make sure approved is set to false after obj created
+    # ensure approved is false
+    @performance.approved = false
     line = Line.find(params[:line_id])
     respond_to do |format|
       if line.performances.push(@performance)

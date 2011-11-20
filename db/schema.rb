@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115233304) do
+ActiveRecord::Schema.define(:version => 20111120130640) do
 
   create_table "lines", :force => true do |t|
     t.string   "character"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20111115233304) do
     t.string   "twitter_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved",      :default => false
   end
 
   create_table "scenes", :force => true do |t|
