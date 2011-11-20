@@ -6,6 +6,8 @@ class DramaController < ApplicationController
   # TODO - show error when video submission fails
   # TODO - implement counter_cache
   # TODO - admin change password
+  # TODO - update seeds.rb to include a scene from: http://www.sandiegoshakespearesociety.org/Shakespeare%20Scenes.pdf
+  # TODO - update code to load appropriate scene
   
   def index
     @scene = Scene.find(1)
