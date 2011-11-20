@@ -2,10 +2,10 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - show YouTube video player when performance exists
   # TODO - show button to pop-up line and submit form, with copy about privacy
   # TODO - show error when video submission fails
   # TODO - implement counter_cache
+  # TODO - admin change password
   
   def index
     @scene = Scene.find(1)
