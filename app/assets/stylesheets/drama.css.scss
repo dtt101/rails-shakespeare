@@ -9,7 +9,7 @@ body {
 	text-align:center;
 }
 #container {
-	width:800px;
+	width:910px;
 	margin:auto;
 	margin-top:30px;
 }
@@ -21,4 +21,17 @@ h1, h2, h3 {
 }
 hgroup {
 	text-align:center;
+}
+table.lines {
+  p {
+    margin:0;
+    padding:0;
+  }
+  td {
+    vertical-align:top;
+    padding-bottom:40px;
+  }
+  td.stage-direction {
+    font-weight:bold;
+  }
 }

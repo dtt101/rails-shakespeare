@@ -18,24 +18,29 @@
     <%= f.submit %>
   <% end %>
 </div>
-
-<% @lines.each do |line| %>
-  <div class="line">
-    <% if line.character? %>
-      <b><%= line.character %></b> <%= simple_format(line.line) %>
-    <% else %>
-      <i><%=  simple_format(line.line) %></i>
-    <% end %>
-    <% if line.character? and (line.performances.count == 0) %>
-      <a href="#" data-line="<%= line.id %>" class="new-performance-link">Submit performance</a>
-    <% else %>
-      <% line.performances.each do |p| %>
-        <% if p.approved %>
-          <iframe width="425" height="349" src="http://www.youtube.com/embed/<%= get_item_embed_id(p.video_url) %>" frameborder="0" allowfullscreen></iframe>
-        <% else %>
-          <p>We have a performance waiting to be reviewed.</p>
-        <% end %>
+<table class="lines">
+  <tbody>
+  <% @lines.each do |line| %>
+    <tr>
+      <% if line.character? %>
+      <td><%= line.character %></td><td><%=  simple_format(line.line) %></td>
+      <% else %>
+      <td colspan="2" class="stage-direction"><%=  simple_format(line.line) %></td>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+      <td>
+        <% if line.character? and (line.performances.count == 0) %>
+          <a href="#" data-line="<%= line.id %>" class="new-performance-link">Your line...</a>
+        <% else %>
+          <% line.performances.each do |p| %>
+            <% if p.approved %>
+              <iframe width="380" height="231" src="http://www.youtube.com/embed/<%= get_item_embed_id(p.video_url) %>?rel=0&fs=0" frameborder="0" allowfullscreen></iframe>
+            <% else %>
+              <p>We have a performance waiting to be reviewed.</p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
