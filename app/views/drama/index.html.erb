@@ -5,6 +5,20 @@
 
 <%= flash[:notice] %>
 
+<div style="display:none" id="new-performance">
+  <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
+    <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
+    <%= f.label :video_url %>:
+    <%= f.url_field :video_url %><br />
+    <%= f.label :email_address %>:
+    <%= f.email_field :email_address %><br />
+    <%= f.label :twitter_name %>:
+    <%= f.text_field :twitter_name %><br />
+    <%= hidden_field_tag(:line_id) %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 <% @lines.each do |line| %>
   <div class="line">
     <% if line.character? %>
@@ -13,17 +27,7 @@
       <i><%=  simple_format(line.line) %></i>
     <% end %>
     <% if line.character? and (line.performances.count == 0) %>
-      <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
-        <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
-        <%= f.label :video_url %>:
-        <%= f.url_field :video_url %><br />
-        <%= f.label :email_address %>:
-        <%= f.email_field :email_address %><br />
-        <%= f.label :twitter_name %>:
-        <%= f.text_field :twitter_name %><br />
-        <%= hidden_field_tag(:line_id, line.id) %>
-        <%= f.submit %>
-      <% end %>
+      <a href="#" data-line="<%= line.id %>" class="new-performance-link">Submit performance</a>
     <% else %>
       <% line.performances.each do |p| %>
         <% if p.approved %>

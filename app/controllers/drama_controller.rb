@@ -2,7 +2,7 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - show button to pop-up line and submit form, with copy about privacy
+  # TODO - design form for submission including quote, copy about privacy and submission form
   # TODO - show error when video submission fails
   # TODO - implement counter_cache
   # TODO - admin change password
