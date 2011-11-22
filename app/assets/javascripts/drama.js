@@ -2,8 +2,22 @@
 
 $(document).ready(function(){
   $("a.new-performance-link").click(function(e) {
-    $("#new-performance").css("display", "block"); // show form
     $("#line_id").val($(this).data("line")); // pass line id
+    $("#new-performance").dialog( "open" );
     e.preventDefault();
   });
+ 
+  $("#new-performance").dialog({
+      autoOpen: false,
+      height: 300,
+      width: 350,
+      modal: true,
+      draggable: false,
+      resizable: false,
+      // buttons: {
+      //   Cancel: function() {
+      //       $( this ).dialog( "close" );
+      //   }         
+      // },
+  });  
 });

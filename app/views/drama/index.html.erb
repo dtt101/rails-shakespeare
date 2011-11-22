@@ -5,7 +5,7 @@
 
 <%= flash[:notice] %>
 
-<div style="display:none" id="new-performance">
+<div style="display:none" id="new-performance" title="Submit your performance">
   <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
     <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
     <%= f.label :video_url %>:
