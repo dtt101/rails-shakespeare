@@ -12,12 +12,10 @@ $(document).ready(function(){
       height: 300,
       width: 350,
       modal: true,
+      position: "top",
       draggable: false,
       resizable: false,
-      // buttons: {
-      //   Cancel: function() {
-      //       $( this ).dialog( "close" );
-      //   }         
-      // },
+      hide: { effect: "blind", options: {}, speed: 1000 },
+      show: { effect: "blind", options: {}, speed: "fast" }
   });  
 });
