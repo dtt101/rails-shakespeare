@@ -6,6 +6,8 @@
 <%= flash[:notice] %>
 
 <div style="display:none" id="new-performance" title="Submit your performance">
+  <div class="character"></div>
+  <div class="line"></div>
   <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
     <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
     <%= f.label :video_url %>:
@@ -23,7 +25,8 @@
   <% @lines.each do |line| %>
     <tr>
       <% if line.character? %>
-      <td><%= line.character %></td><td><%=  simple_format(line.line) %></td>
+      <td id="line-character-<%= line.id %>"><%= line.character %></td>
+      <td id="line-<%= line.id %>"><%=  simple_format(line.line) %></td>
       <% else %>
       <td colspan="2" class="stage-direction"><%=  simple_format(line.line) %></td>
       <% end %>

@@ -2,7 +2,12 @@
 
 $(document).ready(function(){
   $("a.new-performance-link").click(function(e) {
-    $("#line_id").val($(this).data("line")); // pass line id
+    lineid = $(this).data("line")
+    $("#line_id").val(lineid); // pass line id
+    // copy line and character to dialog
+    $("#new-performance .character").html($("#line-character-" + lineid).html());
+    $("#new-performance .line").html($("#line-" + lineid).html());
+    //$('.hello').clone().appendTo('.goodbye');
     $("#new-performance").dialog( "open" );
     e.preventDefault();
   });
