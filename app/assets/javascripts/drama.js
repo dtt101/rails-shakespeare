@@ -14,8 +14,8 @@ $(document).ready(function(){
  
   $("#new-performance").dialog({
       autoOpen: false,
-      height: 300,
-      width: 350,
+      height: "auto",
+      width: 550,
       modal: true,
       position: "top",
       draggable: false,
