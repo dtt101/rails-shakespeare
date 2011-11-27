@@ -32,7 +32,7 @@
       <% end %>
       <td>
         <% if line.character? and (line.performances.count == 0) %>
-          <a href="#" data-line="<%= line.id %>" class="new-performance-link">Your line...</a>
+          <a href="#new-performance" data-line="<%= line.id %>" class="new-performance-link">Your line...</a>
         <% else %>
           <% line.performances.each do |p| %>
             <% if p.approved %>
