@@ -10,7 +10,7 @@ class DramaController < ApplicationController
   # TODO - update code to load appropriate scene
   
   def index
-    @scene = Scene.find(1)
+    @scene = Scene.find(1)  
     @lines = @scene.lines.order(:line_order)
     @performance = Performance.new
   end
