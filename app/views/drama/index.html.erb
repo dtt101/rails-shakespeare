@@ -1,5 +1,5 @@
 <hgroup>
-  <h1><%= image_tag "title.png" %></h1>
+  <h1><%= @scene.title %></h1>
   <h2><%= @scene.description %></h2>
 </hgroup>
 
@@ -9,7 +9,7 @@
   <div class="character"></div>
   <div class="line"></div>
   <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
-    <!--<caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>-->
+    <caption>We will never share your email address with anyone, and only include show Twitter name next to your performance if you provide it</caption>
     <%= f.label :video_url %>:
     <%= f.url_field :video_url %><br />
     <%= f.label :email_address %>:
@@ -22,6 +22,7 @@
 </div>
 <table class="lines">
   <tbody>
+	  <% nomore = false %>
   <% @lines.each do |line| %>
     <tr>
       <% if line.character? %>
@@ -31,8 +32,10 @@
       <td colspan="2" class="stage-direction"><%=  simple_format(line.line) %></td>
       <% end %>
       <td>
-        <% if line.character? and (line.performances.count == 0) %>
+		  
+        <% if line.character? and (line.performances.count == 0) and (nomore == false) %>
           <a href="#new-performance" data-line="<%= line.id %>" class="new-performance-link">Your line...</a>
+		  <% nomore = true %>
         <% else %>
           <% line.performances.each do |p| %>
             <% if p.approved %>
