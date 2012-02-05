@@ -2,12 +2,8 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - design form for submission including quote, copy about privacy and submission form
-  # TODO - show error when video submission fails
   # TODO - implement counter_cache
-  # TODO - admin change password
-  # TODO - update seeds.rb to include a scene from: http://www.sandiegoshakespearesociety.org/Shakespeare%20Scenes.pdf
-  # TODO - update code to load appropriate scene
+  # TODO - handle form errors
   
   def index
     @scene = Scene.find(1)  
