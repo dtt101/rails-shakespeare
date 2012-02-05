@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20111120130640) do
     t.text     "line"
     t.integer  "line_order"
     t.integer  "scene_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "performances", :force => true do |t|
@@ -27,24 +27,24 @@ ActiveRecord::Schema.define(:version => 20111120130640) do
     t.string   "video_url"
     t.string   "email_address"
     t.string   "twitter_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.boolean  "approved",      :default => false
   end
 
   create_table "scenes", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "email",            :null => false
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
