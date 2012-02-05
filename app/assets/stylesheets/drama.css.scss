@@ -57,7 +57,24 @@ table.lines {
 div#new-performance {
   div.line, div.character {
     text-align:left;
+	font-size: 140%;
   }
+}
+form.new_performance {
+	text-align:left;
+	div {
+		font-size:80%;
+		color:#999;
+	}
+	label {
+		font-weight:bold;
+		display:block;
+	}
+	input {
+		padding:3px;
+		margin:3px 0 20px 0;
+		display:block;
+	}
 }
 footer {
 	margin:30px;
