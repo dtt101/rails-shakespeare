@@ -10,7 +10,7 @@
   <div class="line"></div>
   <hr>
   <%= form_for(@performance, :url => '/drama/create_performance', :remote => true) do |f| %>
-  <div id="performance_errors" style="display:none"></div>
+  <div id="performance_errors"></div>
 	<%= label_tag(:video_url, "Paste your YouTube embed URL (like http://youtu.be/QH2-TGUlwu4)") %>
     <%= f.url_field :video_url %>
     <%= f.label :email_address %>
