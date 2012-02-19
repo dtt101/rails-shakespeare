@@ -4,4 +4,7 @@
 		$("#performance_errors").append("<li><%= msg %></li>");
 	<% end %>
 	$("#performance_errors").append("</ul>");
+<% else %>
+	$.colorbox.close();
+	// TODO: show line is partial
 <% end %>
