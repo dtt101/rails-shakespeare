@@ -5,12 +5,14 @@ class DramaController < ApplicationController
   # TODO - implement counter_cache
   # TODO - handle form errors
   
+  # show scene and lines (hardcoded to scene id==1)
   def index
     @scene = Scene.find(1)  
     @lines = @scene.lines.order(:line_order)
     @performance = Performance.new
   end
   
+  # create a performacne for a selected line
   def create_performance
     @performance = Performance.new(params[:performance]) 
     # ensure approved is false
@@ -18,13 +20,9 @@ class DramaController < ApplicationController
     line = Line.find(params[:line_id])
     line.performances.push(@performance)
     respond_to do |format|
-      # TODO - display errors in js
-      # TODO - update UI on success
       if line.performances.push(@performance)
-        logger.info "success"
         format.js 
       else
-        logger.info "fails"
         format.js
       end
     end    

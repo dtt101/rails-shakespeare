@@ -1,6 +1,7 @@
 <% if @performance.errors.any? %>
-<% logger.info 'errors' %>
-$('#performance_errors').html("<%= @performance.errors.count %>");
-<% else %>
-<% logger.info 'no errors' %>
+	$("#performance_errors").append("<ul>");
+	<% @performance.errors.full_messages.each do |msg| %>
+		$("#performance_errors").append("<li><%= msg %></li>");
+	<% end %>
+	$("#performance_errors").append("</ul>");
 <% end %>
