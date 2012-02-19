@@ -16,13 +16,15 @@ class DramaController < ApplicationController
     # ensure approved is false
     @performance.approved = false
     line = Line.find(params[:line_id])
-    
+    line.performances.push(@performance)
     respond_to do |format|
+      # TODO - display errors in js
+      # TODO - update UI on success
       if line.performances.push(@performance)
-        # TODO - no js?
-        format.js
+        logger.info "success"
+        format.js 
       else
-        # TODO - no js?
+        logger.info "fails"
         format.js
       end
     end    

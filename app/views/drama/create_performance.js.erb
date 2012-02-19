@@ -1,1 +1,6 @@
-alert('errors');
+<% if @performance.errors.any? %>
+<% logger.info 'errors' %>
+$('#performance_errors').html("<%= @performance.errors.count %>");
+<% else %>
+<% logger.info 'no errors' %>
+<% end %>
