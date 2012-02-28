@@ -14,7 +14,7 @@
         <% if p.approved %>
           <iframe width="380" height="231" src="http://www.youtube.com/embed/<%= get_item_embed_id(p.video_url) %>?rel=0&fs=0" frameborder="0" allowfullscreen></iframe>
         <% else %>
-          <p>We have a performance waiting to be reviewed.</p>
+          <p>Someone has already had a go! We're just checking it's not rude!</p>
         <% end %>
       <% end %>
     <% end %>
