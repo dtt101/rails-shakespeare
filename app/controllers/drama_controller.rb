@@ -2,7 +2,6 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - implement counter_cache
   # TODO - handle form errors
   
   # show scene and lines (hardcoded to scene id==1)
@@ -10,6 +9,7 @@ class DramaController < ApplicationController
     @scene = Scene.find(1)  
     @lines = @scene.lines.order(:line_order)
     @performance = Performance.new
+    @nomore = false # nomore controls if more 'play your part' links should be shown
   end
   
   # create a performacne for a selected line

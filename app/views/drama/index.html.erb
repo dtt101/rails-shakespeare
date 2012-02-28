@@ -23,7 +23,6 @@
 </div>
 <table class="lines">
   <tbody>
-	<% @nomore = false %>
-	<%= render :partial => "line", :collection => @lines %>
+	<%= render :partial => "line", :collection => @lines, :nomore => @nomore %>
   </tbody>
 </table>
