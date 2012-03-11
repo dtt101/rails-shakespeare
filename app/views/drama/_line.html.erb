@@ -1,4 +1,4 @@
-<tr>
+<tr id="line-row-<%= line.id %>">
   <% if line.character? %>
   <td id="line-character-<%= line.id %>" class="character"><%= line.character %></td>
   <td id="line-<%= line.id %>" class="line"><%=  simple_format(line.line) %></td>
@@ -14,7 +14,11 @@
         <% if p.approved %>
           <iframe width="380" height="231" src="http://www.youtube.com/embed/<%= get_item_embed_id(p.video_url) %>?rel=0&fs=0" frameborder="0" allowfullscreen></iframe>
         <% else %>
-          <p>Someone has already had a go! We're just checking it's not rude!</p>
+					<% if @usersubmitted %>
+	          <p>Thank you! We'll just check you aren't being rude, and then you'll join the ranks of the great and the good. FOLLOW US ON TWITTER FOR NEW LINE POSTING- TODO</p>
+					<% else %>
+	          <p>Someone has already had a go! We're just checking it's not rude!</p>
+					<% end %>
         <% end %>
       <% end %>
     <% end %>

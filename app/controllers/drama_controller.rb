@@ -9,6 +9,7 @@ class DramaController < ApplicationController
     @scene = Scene.find(1)  
     @lines = @scene.lines.order(:line_order)
     @performance = Performance.new
+    @usersubmitted = false # used to show message to user on submission
     @nomore = false # nomore controls if more 'play your part' links should be shown
   end
   
@@ -21,6 +22,7 @@ class DramaController < ApplicationController
     line.performances.push(@performance)
     respond_to do |format|
       if line.performances.push(@performance)
+        @usersubmitted = true
         format.js 
       else
         format.js
