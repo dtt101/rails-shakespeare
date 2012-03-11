@@ -2,8 +2,6 @@ class DramaController < ApplicationController
   
   respond_to :html, :js
   
-  # TODO - handle form errors
-  
   # show scene and lines (hardcoded to scene id==1)
   def index
     @scene = Scene.find(1)  
