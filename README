@@ -1,3 +1,21 @@
 == All the world's a stage
 
 This is an experimental project to enable collaborative performance over the web. 
+
+== Installation
+
+Install postgres using the instructions here: http://blog.willj.net/2011/05/31/setting-up-postgresql-for-ruby-on-rails-development-on-os-x/
+
+PATH=/usr/local/bin:$PATH
+
+Start Postgres: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+
+Stop Postgres: pg_ctl -D /usr/local/var/postgres stop -s -m fast
+
+createuser shakespeare
+
+createdb -Oshakespeare -Eutf8 shakespeare_development
+
+createdb -Oshakespeare -Eutf8 shakespeare_test
+
+psql -U shakespeare shakespeare_development

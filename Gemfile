@@ -37,3 +37,6 @@ end
 
 # authentication
 gem 'sorcery'
+
+# sass mixins
+gem 'bourbon'
