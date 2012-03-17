@@ -12,6 +12,7 @@ Start Postgres: pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 
 Stop Postgres: pg_ctl -D /usr/local/var/postgres stop -s -m fast
 
+
 createuser shakespeare
 
 createdb -Oshakespeare -Eutf8 shakespeare_development
