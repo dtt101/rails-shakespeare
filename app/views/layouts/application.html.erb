@@ -13,21 +13,21 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-<% if notice %>
-<div class="notice"><%= notice %></div>
-<% end %>
-    <div id="container">
-      <header>
-		<h1>All The World's A Stage</h1>
-      </header>
-      <div id="main" role="main">
-  			<%= yield %>
-      </div>
-      <footer>
-		  This site is an experiment in colloborative drama, designed and built by <a href="http://www.notarobot.co.uk">notarobot</a>
-      </footer>
-    </div>
-  </body>
+	<body>
+		<% if notice %>
+		<div class="notice"><%= notice %></div>
+		<% end %>
+		<div id="container">
+			<header>
+					<h1>All The World's A Stage</h1>
+			</header>
+			<div id="main" role="main">
+				<%= yield %>
+			</div>
+			<footer>
+			This site is an experiment in colloborative drama, designed and built by <a href="http://www.notarobot.co.uk">notarobot</a>
+			</footer>
+		</div>
+	</body>
 </html>
 

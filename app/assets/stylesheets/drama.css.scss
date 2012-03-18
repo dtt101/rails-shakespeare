@@ -5,22 +5,36 @@
 
 $gw-column: 400px;          // Column Width
 $gw-gutter: 20px;           // Gutter Width
+$page-gutter: 70px; // left and right grey border width
+
+$background-black: rgba(#000, 1); // header and footer bg
+$container-gray: #a4a4a4; // grey border
 
 body {
-	background-color: #fff;
+	background-color: rgb(29 ,29 ,29);
 	font-family: $helvetica;
 }
-header h1 {
-
+header {
+	height:82px;
+    background-color: transparentize($background-black, 0.22);
+	padding:0 $page-gutter 0 $page-gutter;
 }
 #container {
-
+	width:900px;
+	margin: 0 auto;
+	@include background-image(url("/assets/pages.png"));
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:center;
 }
 #main {
 	text-align:left;
+	padding:0 $page-gutter 0 $page-gutter;
 }
 h1, h2, h3 {
-
+	color: #fff;
+	margin:0;
+	padding:0;
 }
 
 table.lines {
