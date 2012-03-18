@@ -1,6 +1,6 @@
 <tr id="line-row-<%= line.id %>">
   <% if line.character? %>
-  <td id="line-character-<%= line.id %>" class="character"><%= line.character %></td>
+  <td id="line-character-<%= line.id %>" class="character"><p><%= line.character %></p></td>
   <td id="line-<%= line.id %>" class="line"><%=  simple_format(line.line) %></td>
   <% else %>
   <td colspan="2" class="stage-direction"><%=  simple_format(line.line) %></td>
