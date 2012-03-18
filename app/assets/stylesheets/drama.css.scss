@@ -1,22 +1,20 @@
 // Place all the styles related to the Drama controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// This also user Bourbon - thoughtbot.com/bourbon
+
+$gw-column: 400px;          // Column Width
+$gw-gutter: 20px;           // Gutter Width
 
 body {
-	background-image: url("/assets/bg.png");
-	background-repeat: repeat-x;
 	background-color: #fff;
-	text-align:center;
 	font-family: $helvetica;
-
 }
 header h1 {
-	font-size:280%;
+
 }
 #container {
-	width:910px;
-	margin:auto;
-	margin-top:30px;
+
 }
 #main {
 	text-align:left;
@@ -24,31 +22,19 @@ header h1 {
 h1, h2, h3 {
 
 }
-hgroup {
-	text-align:center;
-}
+
 table.lines {
-	border-collapse:separate;
-	line-height: 130%;
-	p {
-	  	margin:0;
-	  	padding:0;
-	}
 	td {
 	  	vertical-align:top;
-	  	padding-bottom:40px;
 	}
 	td.character {
-		padding-right:15px;
+
 	}
 	td.line {
-		padding-right:12px;
-		width:500px;
+
 	}
 	td.performance {
-		border-left: 1px solid #ccc;
-		padding-left:15px;
-		width:400px;
+
 	}
 	td.stage-direction {
 		font-weight:bold;
@@ -56,15 +42,13 @@ table.lines {
 }
 div#new-performance {
   div.line, div.character {
-    text-align:left;
-	font-size: 140%;
+
   }
 }
 form.new_performance {
 	text-align:left;
 	div {
-		font-size:80%;
-		color:#999;
+
 	}
 	label {
 		font-weight:bold;
@@ -77,15 +61,8 @@ form.new_performance {
 	}
 }
 footer {
-	margin:30px;
+
 }
 div.notice {
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	width: 40%;
-	border: 5px solid #ccc;
-	margin-top: 50px;
-	padding: 20px;
-	font-weight: bold;
+
 }
