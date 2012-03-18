@@ -3,12 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	background-image: url("/assets/bg.png");
-	background-repeat: repeat-x;
 	background-color: #fff;
 	text-align:center;
-	font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif
-
+	font-family: $helvetica;
 }
 header h1 {
 	font-size:280%;
@@ -22,7 +19,7 @@ header h1 {
 	text-align:left;
 }
 h1, h2, h3 {
-	font-family: 'Josefin Slab', serif;
+
 }
 hgroup {
 	text-align:center;
