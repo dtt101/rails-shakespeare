@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120130640) do
+ActiveRecord::Schema.define(:version => 20120318180109) do
 
   create_table "lines", :force => true do |t|
     t.string   "character"
     t.text     "line"
     t.integer  "line_order"
     t.integer  "scene_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "performances_count"
   end
 
   create_table "performances", :force => true do |t|

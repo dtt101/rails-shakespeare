@@ -5,7 +5,7 @@ class DramaController < ApplicationController
   # show scene and lines (hardcoded to scene id==1)
   def index
     @scene = Scene.find(1)  
-    @lines = @scene.lines.order(:line_order)
+    @lines = @scene.lines.order(:line_order).includes(:performances)
     @performance = Performance.new
     @usersubmitted = false # used to show message to user on submission
     @nomore = false # nomore controls if more 'play your part' links should be shown

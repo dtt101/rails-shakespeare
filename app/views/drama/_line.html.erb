@@ -6,7 +6,7 @@
   <td colspan="2" class="stage-direction"><%=  simple_format(line.line) %></td>
   <% end %>
   <td class="performance">
-    <% if line.character? and (line.performances.count == 0) and (@nomore == false) %>
+    <% if line.character? and (line.performances.size == 0) and (@nomore == false) %>
       <a href="#new-performance" data-line="<%= line.id %>" class="new-performance-link">Play your part...</a>
 	  <% @nomore = true %>
     <% else %>

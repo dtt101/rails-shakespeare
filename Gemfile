@@ -38,4 +38,4 @@ end
 gem 'sorcery'
 
 # sass mixins
-#gem 'bourbon'
+gem 'bourbon'
