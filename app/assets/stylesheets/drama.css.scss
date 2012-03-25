@@ -6,18 +6,47 @@
 $gw-column: 400px;          // Column Width
 $gw-gutter: 20px;           // Gutter Width
 $page-gutter: 70px; // left and right grey border width
+$page-padding: 37px;
 
 $background-black: rgba(#000, 1); // header and footer bg
 $container-gray: #a4a4a4; // grey border
+$background-white: #fff; // header and footer bg
 
 body {
 	background-color: rgb(29 ,29 ,29);
 	font-family: $helvetica;
 }
+a {
+	text-decoration:underline;
+	color:#666;
+}
+a:hover {
+	color:#fff;
+}
+h1, h2, h3 {
+	color: #fff;
+	margin:0;
+	padding:0;
+}
 header {
 	height:82px;
     background-color: transparentize($background-black, 0.22);
 	padding:0 $page-gutter 0 $page-gutter;
+	position:relative;
+	h1 {
+		position:relative;
+		top:24px;
+		font-weight:normal;
+		font-size:18px;
+		left:$page-padding;
+	}
+	span {
+		position:absolute;
+		top:3px;
+		right: $page-padding + $page-gutter;
+		color:#666;
+		font-size:10px;
+	}
 }
 #container {
 	width:900px;
@@ -29,14 +58,14 @@ header {
 }
 #main {
 	text-align:left;
-	padding:0 $page-gutter 0 $page-gutter;
+	padding:0 $page-gutter + $page-padding 0 $page-gutter + $page-padding;
 }
-h1, h2, h3 {
-	color: #fff;
-	margin:0;
-	padding:0;
+#site-instructions {
+    background-color: transparentize($background-white, 0.32);
+	h1, p {
+		font-size:14px;
+	}
 }
-
 table.lines {
 	border: 1px solid red;
 	td {
