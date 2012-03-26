@@ -78,8 +78,12 @@ header {
 table.lines {
     background-color: transparentize($background-black, 0.33);
 	font-size:14px;
+	ol {
+		padding-left:21px;
+	}	
 	th {
 		font-weight:normal;
+		border:1px solid green;
 	}
 	td {
 	  	vertical-align:top;
