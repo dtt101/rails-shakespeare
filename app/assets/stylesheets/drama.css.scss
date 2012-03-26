@@ -15,6 +15,7 @@ $background-white: #fff; // header and footer bg
 body {
 	background-color: rgb(29 ,29 ,29);
 	font-family: $helvetica;
+	color: #fff;
 }
 a {
 	text-decoration:underline;
@@ -24,9 +25,9 @@ a:hover {
 	color:#fff;
 }
 h1, h2, h3 {
-	color: #fff;
 	margin:0;
 	padding:0;
+	font-weight:normal;
 }
 header {
 	height:82px;
@@ -36,7 +37,6 @@ header {
 	h1 {
 		position:relative;
 		top:24px;
-		font-weight:normal;
 		font-size:18px;
 		left:$page-padding;
 	}
@@ -62,8 +62,17 @@ header {
 }
 #site-instructions {
     background-color: transparentize($background-white, 0.32);
+	text-align:center;
+	margin:22px 0;
+	padding:25px;
 	h1, p {
-		font-size:14px;
+		font-size:12px;
+		color:#666;
+		margin:0;
+		padding:0;
+	}
+	p {
+		font-weight:bold;
 	}
 }
 table.lines {
