@@ -76,10 +76,13 @@ header {
 	}
 }
 table.lines {
-	border: 1px solid red;
+    background-color: transparentize($background-black, 0.33);
+	font-size:14px;
+	th {
+		font-weight:normal;
+	}
 	td {
 	  	vertical-align:top;
-		border: 1px solid green;
 	}
 	td.character {
 
@@ -101,6 +104,7 @@ div#new-performance {
 }
 form.new_performance {
 	text-align:left;
+	color:#000;
 	div {
 
 	}
