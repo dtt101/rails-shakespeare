@@ -1,12 +1,13 @@
 // Place all the styles related to the Drama controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// This also user Bourbon - thoughtbot.com/bourbon
+// This also uses Bourbon - thoughtbot.com/bourbon
 
 $gw-column: 400px;          // Column Width
 $gw-gutter: 20px;           // Gutter Width
 $page-gutter: 70px; // left and right grey border width
-$page-padding: 37px;
+$page-padding: 37px; // for page
+$cell-padding: 15px; // for cells
 
 $background-black: rgba(#000, 1); // header and footer bg
 $container-gray: #a4a4a4; // grey border
@@ -77,28 +78,31 @@ header {
 }
 table.lines {
     background-color: transparentize($background-black, 0.33);
-	font-size:14px;
+	font-size:12px;
 	ol {
-		padding-left:21px;
-	}	
-	th {
-		font-weight:normal;
-		border:1px solid green;
+
 	}
-	td {
+	th, td {
+		padding:25px 0 0 0;
+		font-weight:normal;
 	  	vertical-align:top;
 	}
-	td.character {
-
+	div.character {
+		padding-left: $cell-padding;
 	}
-	td.line {
-
+	div.line {
+		padding-left: $cell-padding;
 	}
 	td.performance {
 
 	}
 	td.stage-direction {
+		padding-left: $cell-padding;
 		font-weight:bold;
+	}
+	p {
+		margin:0;
+		padding:0;
 	}
 }
 div#new-performance {
