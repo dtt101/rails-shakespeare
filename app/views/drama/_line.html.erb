@@ -1,7 +1,7 @@
-<tr id="line-row-<%= line.id %>">
+<tr id="line-row-<%= line.id %>" class="<%= cycle("odd", "even") %>">
   <% if line.character? %>
   <td>
-  <div id="line-character-<%= line.id %>" class="character"><p><%= line.character %></p></div>
+	  <div id="line-character-<%= line.id %>" class="character"><p><%= line.character.titlecase %></p></div>
   <div id="line-<%= line.id %>" class="line"><%=  simple_format(line.line) %></div>
   </td>
   <% else %>

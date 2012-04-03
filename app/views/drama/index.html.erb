@@ -18,14 +18,14 @@
 </div>
 <table class="lines">
   <thead>
-	  <th><%= @scene.title %><br /><%= @scene.description %></th>
-	  <th><h2>How to record</h2>
+	  <th><h1><%= @scene.title %></h1><p><%= @scene.description %></p></th>
+	  <th><h3>How to record</h3>
 		  <ol>
 			  <li>Head on over to YouTube</li>
 				<li>Record a video of you saying the line - you don't have to be in the video if you want!</li>
 				<li>Come back here and paste the YouTube share URL into the box</li>
 		</ol>
-</th>
+	</th>
   </thead>
   <tbody>
 	<%= render :partial => "line", :collection => @lines, :nomore => @nomore %>

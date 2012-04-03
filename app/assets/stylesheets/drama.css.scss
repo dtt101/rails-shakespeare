@@ -80,24 +80,27 @@ table.lines {
     background-color: transparentize($background-black, 0.33);
 	font-size:12px;
 	ol {
-
 	}
 	th, td {
-		padding:25px 0 0 0;
+		padding:25px $cell-padding 25px $cell-padding;
 		font-weight:normal;
 	  	vertical-align:top;
 	}
+	tr.odd {
+	    background-color: transparentize($background-white, 0.88);
+	}
 	div.character {
-		padding-left: $cell-padding;
+		font-size:14px;
+		font-weight:bold;
+		margin-bottom:34px;
 	}
 	div.line {
-		padding-left: $cell-padding;
+
 	}
 	td.performance {
 
 	}
 	td.stage-direction {
-		padding-left: $cell-padding;
 		font-weight:bold;
 	}
 	p {
