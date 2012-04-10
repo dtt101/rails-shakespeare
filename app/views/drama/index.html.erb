@@ -6,9 +6,9 @@
   <div id="performance_errors"></div>
 	<%= label_tag(:video_url, "Paste your YouTube embed URL (like http://youtu.be/QH2-TGUlwu4)") %>
     <%= f.url_field :video_url %>
-    <%= f.label :email_address %>
+    <%= f.label :email_address, "Email (optional)" %>
     <%= f.email_field :email_address %>
-    <%= f.label :twitter_name %>
+    <%= f.label :twitter_name, "Twitter ID (optional)" %>
     <%= f.text_field :twitter_name %>
     <%= hidden_field_tag(:line_id) %>
     <%= f.submit %>
