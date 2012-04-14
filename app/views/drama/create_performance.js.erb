@@ -5,7 +5,6 @@
 	<% end %>
 	$("#performance_errors").append("</ul>");
 <% else %>
-	$('tr#line-row-<%= @performance.line.id.to_s %>').html("<%=j render :partial => 'line', :object => @performance.line, :usersubmitted => @usersubmitted %>");
+	$('tr#line-row-<%= @performance.line.id.to_s %>').replaceWith("<%=j render :partial => 'line', :object => @performance.line, :usersubmitted => @usersubmitted %>");
 	$.colorbox.close();
-	$('tr#line-row-<%= @performance.line.id.to_s %>').css({'background-color':'#88ff88'}).animate({'background-color':'#114411'}, 1000);
 <% end %>
