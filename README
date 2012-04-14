@@ -27,3 +27,9 @@ Add to config/application.rb
 # see http://devcenter.heroku.com/articles/rails3x-asset-pipeline-cedar
 config.assets.initialize_on_precompile = false
 
+== Publishing to Heroku
+Due to asset compilation problem setting needed as a result of Bourbon, need to compile assets locally before 
+sending to heroku
+
+bundle exec rake assets:precompile
+
