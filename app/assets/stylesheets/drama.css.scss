@@ -50,12 +50,13 @@ header {
 	}
 }
 #container {
-	width:900px;
-	margin: 0 auto;
-	@include background-image(url("/assets/pages.png"));
+	background-image: url('/assets/pages.png');
 	background-repeat:no-repeat;
 	background-attachment:fixed;
 	background-position:center;
+	width:900px;
+	margin: 0 auto;
+
 }
 #main {
 	text-align:left;
