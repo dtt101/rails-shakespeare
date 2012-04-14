@@ -38,7 +38,6 @@ class UsersController < ApplicationController
   end
   
   def update
-    logger.info params
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update_attributes(params[:user])
