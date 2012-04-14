@@ -103,9 +103,12 @@ table.lines {
 	}
 }
 div#new-performance {
-  div.line, div.character {
-
-  }
+	color:#000;
+	div.character { 
+		font-weight:bold;
+	}
+	div.line {
+	}
 }
 form.new_performance {
 	text-align:left;
@@ -132,9 +135,6 @@ footer {
 	font-size:12px;
 	color:#000;
     background-color: transparentize($background-white, 0.33);
-}
-#new-performance {
-	color:#000;
 }
 div.notice {
 
